@@ -3,6 +3,11 @@
 // PART 1: SHOW A FORTUNE
 
 function showFortune(evt) {
+  fetch('/fortune')
+    .then(response => response.text()) //what is the response.text => the fortune(which we name on line 8)
+    .then(fortune =>{
+      document.querySelector(`#fortune-text`).innerHTML = fortune;
+    })
   // TODO: get the fortune and show it in the #fortune-text div
 }
 
